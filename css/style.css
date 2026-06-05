@@ -96,3 +96,107 @@ img {
   z-index: 999;
   transition: all 0.3s ease;
 }
+
+.hero-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: var(--couleur-blanc);
+  padding: 6rem 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: var(--couleur-blanc);
+}
+
+.hero-section h2 {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--police-corps);
+  font-weight: 400;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--rayon-carte);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1.5rem;
+}
+.bento-card-wide {
+  grid-column: span 2;
+}
+#CATÉGORIES-de-service .card {
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#CATÉGORIES-de-service .card:hover {
+  border-color: var(--couleur-primaire);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(25, 135, 84, 0.2) !important;
+}
+
+#CATÉGORIES-de-service .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--couleur-sombre);
+}
+
+#CATÉGORIES-de-service .card:hover .card-title {
+  color: var(--couleur-primaire);
+}
+
+
+#temoignages .carousel-inner {
+  border-radius: var(--rayon-carte);
+  overflow: hidden;
+}
+
+#temoignages .carousel-caption {
+  bottom: 2rem;
+}
+
+#temoignages .carousel-caption h5 {
+  font-family: var(--police-titre);
+  font-size: 1.3rem;
+  color: var(--couleur-blanc);
+}
+
+#temoignages .carousel-caption p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+}
+
+
+#cta h2 {
+  color: var(--couleur-blanc);
+  font-size: 2.5rem;
+}
+
+#cta p {
+  color: rgba(255,255,255,0.85);
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card-wide {
+    grid-column: span 1;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+
+:root {
+  --couleur-primaire: #198754;
+  --couleur-secondaire: #0d6efd;
+  --couleur-sombre: #1a1a2e;
+  --couleur-texte: #333333;
+  --couleur-fond: #f8f9fa;
+  --couleur-blanc: #ffffff;
+  --police-titre: 'Playfair Display', serif;
+  --police-corps: 'Poppins', sans-serif;
+  --espacement-section: 5rem;
+  --rayon-carte: 12px;
+  --ombre-carte: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: var(--police-corps);
+  color: var(--couleur-texte);
+  background-color: var(--couleur-blanc);
+  line-height: 1.7;
+}
+
+
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  color: var(--couleur-sombre);
+}
+
+
+a {
+  transition: all 0.3s ease;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.navbar {
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+
+.navbar.scrolled {
+  padding: 0.4rem 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+
+
+.card {
+  border-radius: var(--rayon-carte) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ombre-carte) !important;
+}
+
+
+#backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 45px;
+  height: 45px;
+  background-color: var(--couleur-primaire);
+  color: var(--couleur-blanc);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+}

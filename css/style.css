@@ -291,3 +291,16 @@ body.dark-mode .navbar {
 body.dark-mode footer {
   background-color: #0a0a0a !important;
 }
+/* ============================================
+   ANIMATIONS FADE-IN
+   ============================================ */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

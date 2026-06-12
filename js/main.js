@@ -99,3 +99,58 @@ if (filterBtns.length > 0) {
     });
   });
 }
+/* ============================================
+   COMPTEURS ANIMÉS AU SCROLL
+   ============================================ */
+const counters = document.querySelectorAll('.counter');
+
+if (counters.length > 0) {
+  const observerCounter = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 secondes
+        const step = target / (duration / 16);
+        let current = 0;
+
+        const timer = setInterval(function() {
+          current += step;
+          if (current >= target) {
+            counter.textContent = target.toLocaleString();
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current).toLocaleString();
+          }
+        }, 16);
+
+        // Ne plus observer après animation
+        observerCounter.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => {
+    observerCounter.observe(counter);
+  });
+}
+
+/* ============================================
+   ANIMATIONS FADE-IN AU SCROLL
+   ============================================ */
+const sections = document.querySelectorAll('section');
+
+if (sections.length > 0) {
+  const observerFade = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observerFade.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    observerFade.observe(section);
+  });
+}

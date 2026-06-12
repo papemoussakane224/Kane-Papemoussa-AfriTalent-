@@ -154,3 +154,88 @@ if (sections.length > 0) {
     observerFade.observe(section);
   });
 }
+/* ============================================
+   VALIDATION FORMULAIRE DE CONTACT
+   ============================================ */
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nom = document.getElementById('nom');
+    const prenom = document.getElementById('prenom');
+    const email = document.getElementById('email');
+    const sujet = document.getElementById('sujet');
+    const message = document.getElementById('message');
+    const successMessage = document.getElementById('successMessage');
+
+    let valide = true;
+
+    // Vérifier Nom
+    if (nom.value.trim() === '') {
+      nom.classList.add('is-invalid');
+      nom.classList.remove('is-valid');
+      valide = false;
+    } else {
+      nom.classList.add('is-valid');
+      nom.classList.remove('is-invalid');
+    }
+
+    // Vérifier Prénom
+    if (prenom.value.trim() === '') {
+      prenom.classList.add('is-invalid');
+      prenom.classList.remove('is-valid');
+      valide = false;
+    } else {
+      prenom.classList.add('is-valid');
+      prenom.classList.remove('is-invalid');
+    }
+
+    // Vérifier Email avec regex
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(email.value.trim())) {
+      email.classList.add('is-invalid');
+      email.classList.remove('is-valid');
+      valide = false;
+    } else {
+      email.classList.add('is-valid');
+      email.classList.remove('is-invalid');
+    }
+
+    // Vérifier Sujet
+    if (sujet.value === '') {
+      sujet.classList.add('is-invalid');
+      sujet.classList.remove('is-valid');
+      valide = false;
+    } else {
+      sujet.classList.add('is-valid');
+      sujet.classList.remove('is-invalid');
+    }
+
+    // Vérifier Message — minimum 20 caractères
+    if (message.value.trim().length < 20) {
+      message.classList.add('is-invalid');
+      message.classList.remove('is-valid');
+      valide = false;
+    } else {
+      message.classList.add('is-valid');
+      message.classList.remove('is-invalid');
+    }
+
+    // Si tout est valide — afficher message de succès
+    if (valide) {
+      contactForm.reset();
+      // Enlever les bordures vertes après reset
+      [nom, prenom, email, sujet, message].forEach(field => {
+        field.classList.remove('is-valid');
+      });
+      successMessage.style.display = 'block';
+
+      // Cacher le message après 5 secondes
+      setTimeout(function() {
+        successMessage.style.display = 'none';
+      }, 5000);
+    }
+  });
+} 

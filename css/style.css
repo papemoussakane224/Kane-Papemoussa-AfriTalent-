@@ -1,21 +1,35 @@
+/* GOOGLE FONTS — Import des 2 polices
+   Playfair Display : titres expressifs
+   Poppins : texte du corps lisible*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
 
 
+/* VARIABLES CSS — Définies dans :root
+   Utilisées partout avec var(--nom)
+   Minimum 6 variables requises par le sujet*/
 :root {
-  --couleur-primaire: #198754;
-  --couleur-secondaire: #0d6efd;
-  --couleur-sombre: #1a1a2e;
-  --couleur-texte: #333333;
-  --couleur-fond: #f8f9fa;
-  --couleur-blanc: #ffffff;
-  --police-titre: 'Playfair Display', serif;
-  --police-corps: 'Poppins', sans-serif;
-  --espacement-section: 5rem;
-  --rayon-carte: 12px;
-  --ombre-carte: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* Couleurs principales */
+  --couleur-primaire: #198754;    /* vert AfriTalent */
+  --couleur-secondaire: #0d6efd; /* bleu Bootstrap */
+  --couleur-sombre: #1a1a2e;     /* noir profond pour titres */
+  --couleur-texte: #333333;      /* gris foncé pour le texte */
+  --couleur-fond: #f8f9fa;       /* gris clair pour les fonds */
+  --couleur-blanc: #ffffff;      /* blanc pur */
+
+  /* Typographie */
+  --police-titre: 'Playfair Display', serif;  /* police expressive pour H1/H2/H3 */
+  --police-corps: 'Poppins', sans-serif;      /* police lisible pour le texte */
+
+  /* Espacements et formes */
+  --espacement-section: 5rem;                          /* padding vertical des sections */
+  --rayon-carte: 12px;                                 /* arrondi des cartes */
+  --ombre-carte: 0 4px 20px rgba(0, 0, 0, 0.08);     /* ombre douce des cartes */
 }
 
 
+/* RESET CSS — Supprime les marges par défaut
+   box-sizing: border-box inclut padding/border
+   dans la largeur des éléments*/
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +37,8 @@
 }
 
 
+/*BODY — Styles de base du document
+   Applique la police et la couleur de texte*/
 body {
   font-family: var(--police-corps);
   color: var(--couleur-texte);
@@ -31,44 +47,55 @@ body {
 }
 
 
+/*TITRES — Police expressive pour H1/H2/H3 */
 h1, h2, h3 {
   font-family: var(--police-titre);
   color: var(--couleur-sombre);
 }
 
 
+/* LIENS — Transition douce au survol */
 a {
   transition: all 0.3s ease;
 }
 
 
+/* IMAGES — Responsives par défaut*/
 img {
   max-width: 100%;
   height: auto;
 }
 
 
+/*NAVBAR — Styles de la barre de navigation
+   La classe .scrolled est ajoutée par JS
+   quand l'utilisateur scrolle vers le bas*/
 .navbar {
   transition: all 0.3s ease;
   padding: 1rem 0;
 }
 
+/* Effet shrink au scroll — ajouté par JS */
 .navbar.scrolled {
   padding: 0.4rem 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Logo dans la navbar */
 .navbar-brand {
   font-family: var(--police-titre);
   font-size: 1.5rem;
 }
 
+/* Liens de navigation */
 .nav-link {
   font-weight: 500;
   padding: 0.5rem 1rem !important;
 }
 
 
+/* CARTES BOOTSTRAP — Hover animé
+   Légère élévation au survol sur toutes les cartes*/
 .card {
   border-radius: var(--rayon-carte) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -80,6 +107,9 @@ img {
 }
 
 
+/* BOUTON RETOUR EN HAUT
+   Créé dynamiquement par JS
+   Apparaît en bas à droite après 300px de scroll */
 #backToTop {
   position: fixed;
   bottom: 2rem;
@@ -92,11 +122,14 @@ img {
   border-radius: 50%;
   font-size: 1.2rem;
   cursor: pointer;
-  display: none;
+  display: none; /* caché par défaut, affiché par JS */
   z-index: 999;
   transition: all 0.3s ease;
 }
 
+
+/* SECTION HERO — Page d'accueil
+   Fond dégradé sombre, hauteur 90% de l'écran */
 .hero-section {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: var(--couleur-blanc);
@@ -106,12 +139,14 @@ img {
   align-items: center;
 }
 
+/* Titre principal Hero */
 .hero-section h1 {
   font-size: 3.5rem;
   line-height: 1.2;
   color: var(--couleur-blanc);
 }
 
+/* Sous-titre Hero */
 .hero-section h2 {
   font-size: 1.2rem;
   color: rgba(255,255,255,0.7);
@@ -119,44 +154,60 @@ img {
   font-weight: 400;
 }
 
+/* Cartes statistiques dans le Hero */
 .stat-card {
   background: rgba(255,255,255,0.05);
   border-radius: var(--rayon-carte);
   border: 1px solid rgba(255,255,255,0.1);
 }
 
+
+/* BENTO GRID — Section "Comment ça marche"
+   Grille asymétrique style Bento Box 2026
+   La 4ème carte prend 2 colonnes*/
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 1.5rem;
 }
+
+/* Carte large — occupe 2 colonnes */
 .bento-card-wide {
   grid-column: span 2;
 }
+
+
+/* SECTION CATÉGORIES — Effets hover
+   Bordure verte et élévation au survol*/
 #CATÉGORIES-de-service .card {
   border: 2px solid transparent;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
+/* Effet hover — bordure verte + élévation */
 #CATÉGORIES-de-service .card:hover {
   border-color: var(--couleur-primaire);
   transform: translateY(-8px);
   box-shadow: 0 10px 30px rgba(25, 135, 84, 0.2) !important;
 }
 
+/* Titre des cartes catégories */
 #CATÉGORIES-de-service .card-title {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--couleur-sombre);
 }
 
+/* Titre en vert au survol */
 #CATÉGORIES-de-service .card:hover .card-title {
   color: var(--couleur-primaire);
 }
 
 
+/* SECTION TÉMOIGNAGES — Carousel Bootstrap
+   Style des captions sur les images*/
 #temoignages .carousel-inner {
   border-radius: var(--rayon-carte);
   overflow: hidden;
@@ -166,18 +217,22 @@ img {
   bottom: 2rem;
 }
 
+/* Nom du témoignant */
 #temoignages .carousel-caption h5 {
   font-family: var(--police-titre);
   font-size: 1.3rem;
   color: var(--couleur-blanc);
 }
 
+/* Texte du témoignage */
 #temoignages .carousel-caption p {
   font-size: 0.95rem;
   color: rgba(255,255,255,0.9);
 }
 
 
+/* SECTION CTA — Appel à l'action
+   Texte blanc sur fond coloré */
 #cta h2 {
   color: var(--couleur-blanc);
   font-size: 2.5rem;
@@ -187,119 +242,114 @@ img {
   color: rgba(255,255,255,0.85);
 }
 
-@media (max-width: 768px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
-  }
 
-  .bento-card-wide {
-    grid-column: span 1;
-  }
-
-  .hero-section h1 {
-    font-size: 2.2rem;
-  }
-}
-
+/* RESPONSIVE — MOBILE (max 375px)
+   Ajustements pour petits écrans */
 @media (max-width: 375px) {
-
   .hero-section h1 {
     font-size: 1.8rem;
   }
-
   .hero-section {
     padding: 3rem 0;
     min-height: auto;
   }
-
   .stat-card {
     margin-bottom: 1rem;
   }
-
   #cta h2 {
     font-size: 1.6rem;
   }
 }
 
 
+/* RESPONSIVE — TABLETTE (max 768px)
+   Ajustements pour écrans moyens */
 @media (max-width: 768px) {
-
   .hero-section h1 {
     font-size: 2.2rem;
   }
-
   .hero-section {
     padding: 4rem 0;
     min-height: auto;
     text-align: center;
   }
-
+  /* Bento Grid passe en 1 colonne sur mobile */
   .bento-grid {
     grid-template-columns: 1fr;
   }
-
   .bento-card-wide {
     grid-column: span 1;
   }
-
   #cta h2 {
     font-size: 2rem;
   }
-
   .navbar-brand {
     font-size: 1.2rem;
   }
 }
 
 
+/* RESPONSIVE — DESKTOP (min 1200px)
+   Styles pour grands écrans */
 @media (min-width: 1200px) {
-
   .hero-section h1 {
     font-size: 4rem;
   }
-
   .bento-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-/* ============================================
-   DARK MODE
-   ============================================ */
+
+
+/* DARK MODE — Mode sombre
+   Activé par la classe .dark-mode sur le body
+   Ajoutée/retirée par JS via le bouton toggle
+   Sauvegardé dans localStorage */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
 
+/* Cartes en mode sombre */
 body.dark-mode .card {
   background-color: #1e1e1e;
   border-color: #333;
   color: #e0e0e0;
 }
 
+/* Texte secondaire en mode sombre */
 body.dark-mode .text-muted {
   color: #aaaaaa !important;
 }
 
+/* Fonds clairs en mode sombre */
 body.dark-mode .bg-light {
   background-color: #1a1a1a !important;
 }
 
+/* Navbar en mode sombre */
 body.dark-mode .navbar {
   background-color: #0a0a0a !important;
 }
 
+/* Footer en mode sombre */
 body.dark-mode footer {
   background-color: #0a0a0a !important;
 }
-/* ============================================
-   ANIMATIONS FADE-IN
-   ============================================ */
+
+
+/* ANIMATIONS FADE-IN AU SCROLL
+   Les sections partent invisibles (opacity: 0)
+   La classe .visible est ajoutée par JS via
+   IntersectionObserver quand elles entrent
+   dans le viewport */
 section {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+/* Section visible — animation terminée */
 section.visible {
   opacity: 1;
   transform: translateY(0);

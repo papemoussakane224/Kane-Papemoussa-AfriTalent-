@@ -5,21 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AfriTalent — Accueil</title>
+  <!-- Bootstrap 5 CSS via CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Feuille de style personnelle -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 
 <body>
+
+  <!-- NAVBAR — Navigation principale fixe en haut
+       Contient le logo, les liens et le dark mode -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNavbar">
     <div class="container-fluid px-4">
+
+      <!-- Logo AfriTalent -->
       <a class="navbar-brand d-flex align-items-center" href="#">
         <span class="fw-bold text-success">AfriTalent</span>
       </a>
+
+      <!-- Bouton hamburger pour mobile -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      <!-- Liens de navigation -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -37,38 +49,46 @@
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
-          <!-- ✅ Bouton dark mode ajouté ici -->
+          <!-- Bouton toggle dark mode -->
           <li class="nav-item ms-2">
             <button class="btn btn-outline-light btn-sm" id="darkModeToggle" aria-label="Activer le mode sombre">
               <i class="bi bi-moon-fill"></i>
             </button>
           </li>
+          <!-- Bouton CTA -->
           <li class="nav-item">
             <a class="nav-link btn btn-success text-white ms-lg-3 px-4" href="contact.html">Join AfriTalent</a>
           </li>
         </ul>
       </div>
+
     </div>
   </nav>
 
-  <div class="container py-2 "></div>
+  <!-- SECTION HERO — Titre principal et boutons CTA -->
+  <div class="container py-2"></div>
   <h1>
-    <strong>AfriTalent:Votre porte d'entrée vers le freelancing en Afrique.</strong><br>
-    <h2>Des opportunités concrètes pour les talents d'aujourd'hui.</h2>
+    <strong>AfriTalent : Votre porte d'entrée vers le freelancing en Afrique.</strong><br>
   </h1>
+  <h2>Des opportunités concrètes pour les talents d'aujourd'hui.</h2>
+
+  <!-- Boutons d'appel à l'action -->
   <div class="d-grid gap-2 d-md-block py-5">
     <a href="freelances.html" class="btn btn-primary">Je suis Freelance</a>
     <a href="freelances.html" class="btn btn-primary">Je cherche un Freelance</a>
   </div>
 
-  <section id="hero">
+  <!-- SECTION STATISTIQUES — Chiffres clés animés
+       Les compteurs s'animent au scroll via JS -->
+  <section id="hero" aria-label="Statistiques AfriTalent">
+    <!-- ✅ Correction 1 : aria-label remplace le h2 manquant -->
     <div class="container overflow-hidden text-center">
-      <div class="row gx-5 py-5"> 
+      <div class="row gx-5 py-5">
         <div class="col">
-          <div class="p-3"> +3000 freelances </div>
+          <div class="p-3">+3000 freelances</div>
         </div>
         <div class="col">
-          <div class="p-3">+1000 entreprises </div>
+          <div class="p-3">+1000 entreprises</div>
         </div>
         <div class="col">
           <div class="p-3">+13 700 missions réalisées</div>
@@ -77,6 +97,8 @@
     </div>
   </section>
 
+  <!-- SECTION COMMENT ÇA MARCHE — 4 étapes
+       Présentation du processus en cartes Bootstrap -->
   <section id="Comment-ca-marche">
     <div>
       <div class="container py-5">
@@ -84,66 +106,71 @@
           <h2 class="fw-bold">Comment ça marche ?</h2>
         </div>
         <div class="row g-4">
+
+          <!-- Étape 1 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border shadow-sm">
               <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
-                  <div
-                    class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center p-3 fs-5 fw-bold"
+                  <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center p-3 fs-5 fw-bold"
                     style="width: 40px; height: 40px;">1</div>
-                  <h5 class="ms-3 mb-0 fw-bold">Crée ton profil</h5>
+                  <!-- ✅ Correction 2 : h5 → h3 pour respecter la hiérarchie -->
+                  <h3 class="ms-3 mb-0 fw-bold fs-5">Crée ton profil</h3>
                 </div>
-                <p class="card-text text-muted">Inscris-toi gratuitement et complète ton profil en quelques minutes pour
-                  commencer.</p>
+                <p class="card-text text-muted">Inscris-toi gratuitement et complète ton profil en quelques minutes pour commencer.</p>
               </div>
             </div>
           </div>
+
+          <!-- Étape 2 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border shadow-sm">
               <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
-                  <div
-                    class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center p-3 fs-5 fw-bold"
+                  <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center p-3 fs-5 fw-bold"
                     style="width: 40px; height: 40px;">2</div>
-                  <h5 class="ms-3 mb-0 fw-bold">Trouve des opportunités</h5>
+                  <h3 class="ms-3 mb-0 fw-bold fs-5">Trouve des opportunités</h3>
                 </div>
-                <p class="card-text text-muted">Parcours les missions disponibles ou publie tes besoins en tant
-                  qu'entreprise.</p>
+                <p class="card-text text-muted">Parcours les missions disponibles ou publie tes besoins en tant qu'entreprise.</p>
               </div>
             </div>
           </div>
+
+          <!-- Étape 3 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border shadow-sm">
               <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
-                  <div
-                    class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center p-3 fs-5 fw-bold"
+                  <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center p-3 fs-5 fw-bold"
                     style="width: 40px; height: 40px;">3</div>
-                  <h5 class="ms-3 mb-0 fw-bold">Travaillez ensemble</h5>
+                  <h3 class="ms-3 mb-0 fw-bold fs-5">Travaillez ensemble</h3>
                 </div>
-                <p class="card-text text-muted">Échangez facilement, suivez le projet et collaborez efficacement en
-                  temps réel.</p>
+                <p class="card-text text-muted">Échangez facilement, suivez le projet et collaborez efficacement en temps réel.</p>
               </div>
             </div>
           </div>
+
+          <!-- Étape 4 -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 border shadow-sm">
               <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
-                  <div
-                    class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center p-3 fs-5 fw-bold"
+                  <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center p-3 fs-5 fw-bold"
                     style="width: 40px; height: 40px;">4</div>
-                  <h5 class="ms-3 mb-0 fw-bold">Paiement sécurisé</h5>
+                  <h3 class="ms-3 mb-0 fw-bold fs-5">Paiement sécurisé</h3>
                 </div>
-                <p class="card-text text-muted">Le freelance reçoit son paiement en toute sécurité après validation de
-                  la mission.</p>
+                <p class="card-text text-muted">Le freelance reçoit son paiement en toute sécurité après validation de la mission.</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
+    </div>
   </section>
 
+  <!-- SECTION CATÉGORIES DE SERVICES — 6 catégories
+       Grille Bootstrap responsive avec effets hover -->
   <section id="CATÉGORIES-de-service">
     <div>
       <div class="container py-5">
@@ -152,71 +179,85 @@
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <!-- Catégorie 1 -->
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">🌐 Développement Web </h5>
-              <p class="card-text"><strong>Sites vitrines, e-commerce, applications web full-stack.</strong><br>187
-                freelances disponibles.</p>
+              <!-- ✅ Correction 3 : h5 → h3 pour respecter la hiérarchie -->
+              <h3 class="card-title fs-5">🌐 Développement Web</h3>
+              <p class="card-text"><strong>Sites vitrines, e-commerce, applications web full-stack.</strong><br>187 freelances disponibles.</p>
             </div>
           </div>
         </div>
+
+        <!-- Catégorie 2 -->
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">📱 Développement Mobile</h5>
-              <p class="card-text"><strong>Applications iOS et Android natives ou cross-platform.</strong><br>113
-                freelances disponibles.</p>
+              <h3 class="card-title fs-5">📱 Développement Mobile</h3>
+              <p class="card-text"><strong>Applications iOS et Android natives ou cross-platform.</strong><br>113 freelances disponibles.</p>
             </div>
           </div>
         </div>
+
+        <!-- Catégorie 3 -->
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">🛡️ Cybersécurité</h5>
-              <p class="card-text"><strong>Audit de sécurité, tests d'intrusion et protection des
-                  données.</strong><br>47 freelances disponibles.</p>
+              <h3 class="card-title fs-5">🛡️ Cybersécurité</h3>
+              <p class="card-text"><strong>Audit de sécurité, tests d'intrusion et protection des données.</strong><br>47 freelances disponibles.</p>
             </div>
           </div>
         </div>
+
+        <!-- Catégorie 4 -->
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">🗄️ Base de données </h5>
-              <p class="card-text"><strong>Conception, optimisation et administration de bases de
-                  données.</strong><br>89 freelances disponibles.</p>
+              <h3 class="card-title fs-5">🗄️ Base de données</h3>
+              <p class="card-text"><strong>Conception, optimisation et administration de bases de données.</strong><br>89 freelances disponibles.</p>
             </div>
           </div>
         </div>
+
+        <!-- Catégorie 5 -->
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">🤖 Intelligence Artificielle</h5>
-              <p class="card-text"><strong>Modèles ML, chatbots, automatisation et traitement de données.</strong><br>62
-                freelances disponibles.</p>
+              <h3 class="card-title fs-5">🤖 Intelligence Artificielle</h3>
+              <p class="card-text"><strong>Modèles ML, chatbots, automatisation et traitement de données.</strong><br>62 freelances disponibles.</p>
             </div>
           </div>
         </div>
+
+        <!-- Catégorie 6 -->
         <div class="col">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">🔧 Administration Systèmes</h5>
-              <p class="card-text"><strong>Linux, réseaux, cloud, virtualisation et <br>DevOps.</strong><br>99
-                freelances disponibles.</p>
+              <h3 class="card-title fs-5">🔧 Administration Systèmes</h3>
+              <p class="card-text"><strong>Linux, réseaux, cloud, virtualisation et DevOps.</strong><br>99 freelances disponibles.</p>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
+  <!-- SECTION TÉMOIGNAGES — Carousel Bootstrap
+       3 témoignages avec photos, noms et étoiles -->
   <section class="py-5" id="temoignages">
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="fw-bold">Ils ont fait confiance à AfriTalent</h2>
         <p class="text-muted">Des freelances et entreprises qui témoignent</p>
       </div>
+
+      <!-- Carousel Bootstrap -->
       <div id="carouselTemoignages" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicateurs points -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Témoignage 1"></button>
@@ -225,38 +266,46 @@
           <button type="button" data-bs-target="#carouselTemoignages" data-bs-slide-to="2"
             aria-label="Témoignage 3"></button>
         </div>
+
         <div class="carousel-inner rounded-4">
+
+          <!-- Témoignage 1 -->
           <div class="carousel-item active">
             <img src="image/Whath1.jpeg" class="d-block w-100" alt="Photo de Moussa Konaté"
               style="max-height: 500px; object-fit: cover;">
             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
-              <h5 class="fw-bold">Moussa Konaté — Directeur Technique</h5>
-              <p>Nous avons recruté un développeur mobile en 48h. La qualité des profils disponibles sur AfriTalent nous
-                a vraiment surpris. On recommande à 100%</p>
+              <!-- ✅ Correction 4 : h5 → h3 pour respecter la hiérarchie -->
+              <h3 class="fw-bold fs-5">Moussa Konaté — Directeur Technique</h3>
+              <p>Nous avons recruté un développeur mobile en 48h. La qualité des profils disponibles sur AfriTalent nous a vraiment surpris. On recommande à 100%</p>
               <p>⭐⭐⭐⭐⭐</p>
             </div>
           </div>
+
+          <!-- Témoignage 2 -->
           <div class="carousel-item">
             <img src="image/Whatf2.jpeg" class="d-block w-100" alt="Photo de Aminata Diallo"
               style="height: 500px; object-fit: cover; object-position: center 20%;">
             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
-              <h5 class="fw-bold">Aminata Diallo — Développeuse Web Full-Stack</h5>
-              <p>Grâce à AfriTalent, j'ai trouvé mes 3 premiers clients en moins de 2 semaines. La plateforme est
-                simple, professionnelle et vraiment adaptée au marché africain.</p>
+              <h3 class="fw-bold fs-5">Aminata Diallo — Développeuse Web Full-Stack</h3>
+              <p>Grâce à AfriTalent, j'ai trouvé mes 3 premiers clients en moins de 2 semaines. La plateforme est simple, professionnelle et vraiment adaptée au marché africain.</p>
               <p>⭐⭐⭐⭐⭐</p>
             </div>
           </div>
+
+          <!-- Témoignage 3 -->
           <div class="carousel-item">
             <img src="image/Whatf1.jpeg" class="d-block w-100" alt="Photo de Fatou Ndiaye"
               style="height: 500px; object-fit: cover; object-position: center 20%;">
             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
-              <h5 class="fw-bold">Fatou Ndiaye — Designer UI/UX</h5>
-              <p>AfriTalent m'a permis de travailler avec des entreprises sérieuses tout en restant au Sénégal. Le
-                système de paiement sécurisé me donne une vraie tranquillité d'esprit.</p>
+              <h3 class="fw-bold fs-5">Fatou Ndiaye — Designer UI/UX</h3>
+              <p>AfriTalent m'a permis de travailler avec des entreprises sérieuses tout en restant au Sénégal. Le système de paiement sécurisé me donne une vraie tranquillité d'esprit.</p>
               <p>⭐⭐⭐⭐⭐</p>
             </div>
           </div>
+
         </div>
+
+        <!-- Boutons précédent/suivant -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Précédent</span>
@@ -265,21 +314,26 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Suivant</span>
         </button>
+
       </div>
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- FOOTER — 4 colonnes Bootstrap
+       Liens utiles, ressources, contact, réseaux -->
   <footer class="bg-dark text-white pt-5 pb-3">
     <div class="container">
       <div class="row g-4">
+
+        <!-- Colonne 1 : Description -->
         <div class="col-md-3">
-          <h5 class="fw-bold text-success">AfriTalent</h5>
-          <p class="text-white small">La plateforme de mise en relation entre freelances tech et entreprises africaines.
-          </p>
+          <h4 class="fw-bold text-success">AfriTalent</h4>
+          <p class="text-white small">La plateforme de mise en relation entre freelances tech et entreprises africaines.</p>
         </div>
+
+        <!-- Colonne 2 : Liens utiles -->
         <div class="col-md-3">
-          <h6 class="fw-bold">Liens utiles</h6>
+          <h5 class="fw-bold">Liens utiles</h5>
           <ul class="list-unstyled small">
             <li><a href="index.html" class="text-white text-decoration-none">Accueil</a></li>
             <li><a href="freelances.html" class="text-white text-decoration-none">Freelances</a></li>
@@ -287,8 +341,10 @@
             <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
           </ul>
         </div>
+
+        <!-- Colonne 3 : Ressources -->
         <div class="col-md-3">
-          <h6 class="fw-bold">Ressources</h6>
+          <h5 class="fw-bold">Ressources</h5>
           <ul class="list-unstyled small">
             <li><a href="about.html" class="text-white text-decoration-none">À propos</a></li>
             <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
@@ -296,35 +352,39 @@
             <li><a href="freelances.html" class="text-white text-decoration-none">Conditions d'utilisation</a></li>
           </ul>
         </div>
+
+        <!-- Colonne 4 : Contact et réseaux sociaux -->
         <div class="col-md-3">
-          <h6 class="fw-bold">Contact</h6>
+          <h5 class="fw-bold">Contact</h5>
           <p class="text-white small">
             contact@afritalent.com<br>
             +221 77 000 00 00<br>
             Dakar, Sénégal
           </p>
+          <!-- Icônes réseaux sociaux -->
           <div class="d-flex gap-3 mt-2">
-            <a href="#" aria-label="Facebook" class="text-white fs-5">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="#" aria-label="Twitter" class="text-white fs-5">
-              <i class="bi bi-twitter-x"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn" class="text-white fs-5">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="#" aria-label="Instagram" class="text-white fs-5">
-              <i class="bi bi-instagram"></i>
-            </a>
+            <a href="#" aria-label="Facebook" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter" class="text-white fs-5"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn" class="text-white fs-5"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
+
       </div>
+
       <hr class="border-secondary mt-4">
+
+      <!-- Copyright avec année dynamique via JS -->
       <p class="text-center text-white small mb-0">
         &copy; <span id="currentYear"></span> AfriTalent. Tous droits réservés.
       </p>
+
     </div>
   </footer>
+
+  <!-- Bootstrap 5 JS via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script personnel -->
   <script src="js/main.js"></script>
 
 </body>
